@@ -32,3 +32,68 @@
  */
 
 //writ your code here .....
+
+
+function Player(name){
+	var player={};
+	player.name=name;
+	player.addInfo=addInfo;
+	player.age="" ;
+	player.position="" ;
+	player.level=0 ;
+	player.availability= "";
+	player.increaseLevel=increaseLevel;
+	player.isAvailable=isAvailable;
+	
+	return player;
+}
+
+var addInfo=function(age, position, level, availability){
+	this.age=age;
+	this.position=position;
+	this.level=level;
+	this.availability=availability;
+	}
+
+	var increaseLevel=function(n){
+	this .level=this.level+n;
+		}
+
+	var isAvailable=function(){
+		if(availability){
+			return true;
+
+		}
+		else{
+			return false;
+		}
+
+	}
+
+var player1=Player("jonny");
+var player2=Player("Justin");
+var player3=Player("Patrick");
+var player4=Player("Rui");
+var arrayOfPlayers=[];
+arrayOfPlayers.push(player1,player2,player3,player4);
+player1.addInfo(26,"captin",1,true);
+player2.addInfo(32,"captin",1,true);
+player3.addInfo(22,"b",1,false);
+player4.addInfo(20,"c",1,true);
+ 	
+ 	var changeLevel=function(arrayOfPlayers){
+ 		arrayOfPlayers.forEach(function(element,i){
+ 			if(element.age>30){
+ 				++element.level;
+
+ 			}
+ 		});
+
+ 	}
+ 	function sortPalyerBy(arr,key){
+ 		arr.sort(function(a,b){
+ 			return a.key-b.key;
+
+ 		});
+
+ 	}

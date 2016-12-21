@@ -14,7 +14,43 @@
 */
 // write your code here ...
 
+//1
+function createStudent(name,age,education,nationality){
+	return {
+		name:name,
+		age:age,
+		education:education,
+		nationality:nationality
 
+	};
+
+}
+var student1=createStudent("Rwaida","27","Computer Science","Yemni");
+var student1=createStudent("hadeel","24"," Computer engineering","syrian");
+var students=[];
+
+function showFriend(frinedData){
+	return frinedData.name+"  with the age of  "+frinedData.age+" and with "+frinedData.education;
+
+}
+
+function addStudent(student){
+	students.push(student);
+
+}
+addStudent(student1);
+addStudent(student2);
+
+function avergeStudents(students){
+	
+	var result=0;
+	for (var i = 0; i < students.length; i++) {
+		result=result+students[i].age;
+	}
+	return result/students.length;
+
+
+}
 
 
 /*
@@ -22,11 +58,37 @@
 	in order to square the numbers create a function called square and call it inside rangeSquared function
 	rangeSquared(2)// [4];
 	rangeSquared(3) // null
-	rangeSquared(2,10)// [4,16,12,16,100];
+	rangeSquared(2,10)// [4,16,36,64,100];
 */
 // write your code here ...
+function square(n){
+	return n*n;
 
+} 
 
+function rangeSquared(n1,n2){
+	var arr=[];
+	var result=null ;
+	if(n2===undefined){
+		if (n1%2===0) {
+			result=square(n1);
+			return result
+		}
+	}
+		else{
+
+	
+	for (var i = n1; i < n2+1; i++) {
+		if(i%2===0){
+			result=square(i);
+			arr.push(result);
+		}
+		
+	}
+	return arr;
+}
+
+}
 
 
 /* c- Find all leaders in an array. A leader is an element larger than all elements to the right of it.
@@ -35,4 +97,16 @@
 */
 
 // write your code here ....
+function leader(arr){
+	var newarr=[];
+
+	for (var i = 0; i < arr.length; i++) {
+		if(arr[i]>arr[i+1]){
+			newarr.push(arr[i])
+
+		}
+		
+		}
+		return newarr;
+}
 
